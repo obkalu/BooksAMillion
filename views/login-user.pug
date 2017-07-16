@@ -1,0 +1,13 @@
+extends _layout
+
+block content
+    
+    h1 #{page_title}
+    form(method="POST" action="/user/login")
+        #form-group
+            label(for="userId") User ID:
+            input.form-control(id="userId", name="userId", type="text", autofocus style="margin-bottom:0.7em;")
+        #form-group
+            label(for="passwd") Password:
+            input.form-control(id="passwd", name="passwd", type="password", style="margin-bottom:0.7em;")
+        input.btn.btn-primary(type="submit", value="Sign In", style="margin-top:0.8em;")

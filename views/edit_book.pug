@@ -1,0 +1,20 @@
+extends _layout
+
+block content
+    
+    h1 #{page_title}
+    form(method="POST" action="/book/edit/"+book._id)
+        #form-group
+            label Title:
+            input.form-control(name="title", type="text", value=book.title, style="margin-bottom:0.7em;")
+        #form-group
+            label Author:
+            input.form-control(name="author", type="text", value=book.author, style="margin-bottom:0.7em;")
+        #form-group
+            label Content summary:
+            textarea.form-control(name="content", rows="3" style="margin-bottom:0.7em;")= book.content
+        #form-group
+            label Date Published:
+            input.form-control(name="datePublished", type="date", value=book.datePublished, style="margin-bottom:0.7em;")
+
+        input.btn.btn-primary(type="submit", value="Submit", style="margin-top:0.8em;")

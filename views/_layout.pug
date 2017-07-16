@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Books-a-Million - a Demo webapp for showcasing appdev with Mongo-Express-Node
+        link(rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css")
+        link(rel="stylesheet" href="/styles/styles.css")
+    body
+        nav.navbar.navbar-inverse
+            .container
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/') Books-a-Million
+                #navbar.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/book/browse') Browse Collection
+                        if user
+                            li
+                                a(href='/book/add') Add A New Book
+                    ul.nav.navbar-nav.navbar-right
+                        if user
+                            li  
+                                a(href='/user/profile') Hello, #{user.fullname} &nbsp; &nbsp;|   
+                            li
+                                a(href='/user/logout') Sign Out
+                        else
+                            li
+                                a(href='/user/register') Register
+                            li
+                                a(href='/user/login') Sign In
+        .container
+            != messages("_message_template", locals)
+            if validationErrors
+                each validationError, i in validationErrors
+                    div(class="alert alert-danger") #{validationError.msg}
+            block content
+            br
+            hr
+            footer
+                p Copyright &copy; 2017
+        script(src="/bower_components/jquery/dist/jquery.js" type="text/javascript")
+        script(src="/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript")
+        script(src="/scripts/client.js" type="text/javascript")

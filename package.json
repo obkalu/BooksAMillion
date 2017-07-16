@@ -1,0 +1,42 @@
+{
+  "name": "booksamillion",
+  "version": "0.0.1",
+  "description": "A basic demo web application using mongodb, express and nodejs to manage books for a book-club",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Books",
+    "mongodb",
+    "express.js",
+    "node.js"
+  ],
+  "author": "obinna a. kalu",
+  "license": "MIT",
+  "repository": "https://github.com/obkalu/BooksAMillion",
+  "bugs": {
+    "email": "obkalu@gmail.com"
+  },
+  "contributors": [
+    "Obinna A. Kalu (obkalu@gmail.com)"
+  ],
+  "homepage": "https://github.com/obkalu/BooksAMillion",
+  "engines": {},
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.15.3",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.3",
+    "express-validator": "^3.2.1",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.2"
+  },
+  "devDependencies": {}
+}

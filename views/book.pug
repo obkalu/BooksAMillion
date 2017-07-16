@@ -1,0 +1,19 @@
+extends _layout
+
+block content
+    
+    h1= book.title
+    h4 Written by: #{book.author}
+
+    p 
+        b Synopsis: 
+        div #{book.content}
+
+    p 
+        b Published on: 
+        span #{book.datePublished}
+    if user
+        hr
+        a.btn.btn-default(href="/book/edit/"+book._id) Edit Book Info
+        if user.userRole == 'Admin'
+            a.btn.btn-danger.delete-book(href="#", data-id=book._id, style="margin-left:3em;") Delete Book

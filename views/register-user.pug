@@ -1,0 +1,29 @@
+extends _layout
+
+block content
+    
+    h1 #{page_title}
+    form(method="POST" action="/user/register")
+        #form-group
+            label(for="fullname") Full Name 
+                span(style="font-style:italic") (format: First Middle Last):
+            input.form-control(id="fullname", name="fullname", type="text", autofocus style="margin-bottom:0.7em;")
+        #form-group
+            label(for="email") Email
+                span(style="font-style:italic")  (e.g: yourname@emaildomain.com):
+            input.form-control(id="email", name="email", type="email", style="margin-bottom:0.7em;")
+        #form-group
+            label(for="userId") User Id:
+            input.form-control(id="userId", name="userId", type="text", style="margin-bottom:0.7em;")
+        #form-group
+            label(for="passwd") Password:
+            input.form-control(id="passwd", name="passwd", type="password", style="margin-bottom:0.7em;")
+        #form-group
+            label(for="confPasswd") Confirm Password:
+            input.form-control(id="confPasswd", name="confPasswd", type="password", style="margin-bottom:0.7em;")
+        #form-group
+            label(for="userRole") Role:
+            select.form-control(id="userRole", name="userRole", style="margin-bottom:0.7em;")
+                option(value="Admin") Admin
+                option(value="Reader") Reader
+        input.btn.btn-primary(type="submit", value="Submit", style="margin-top:0.8em;")
